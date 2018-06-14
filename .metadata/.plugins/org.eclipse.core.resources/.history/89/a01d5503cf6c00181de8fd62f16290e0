@@ -1,0 +1,5 @@
+package task.bigramcount;
+
+public class BigramCountReducer {
+
+}

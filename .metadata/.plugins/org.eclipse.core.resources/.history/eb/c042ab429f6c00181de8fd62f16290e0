@@ -1,0 +1,35 @@
+package task.bigramcount;
+
+
+import org.apache.hadoop.io.WritableComparable;
+
+public class TextPair implements WritableComparable<TextPair> {
+
+	private Text first;
+	private Text second;
+	
+	public TextPair(){
+		
+	}
+		
+	public TextPair(){
+			
+		}
+
+	public TextPair(){
+		
+	}
+	public void readFields() {
+		
+	}
+	
+	public void write() {
+		
+	}
+	
+	public int compareTo(TextPair t) {
+		
+	}
+	
+	
+}

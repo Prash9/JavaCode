@@ -1,0 +1,16 @@
+
+
+import org.apache.hadoop.mapreduce.Reducer;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.io.IntWritable;
+
+public class SearchReducerClass extends Reducer<Text,Text,Text,Text> {
+
+	@Override
+	public void reduce(Text key,Iterable<Text> filename,Context context) {
+		
+	}
+	
+	
+	
+}

@@ -1,0 +1,17 @@
+package task.bigramcount;
+
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.mapreduce.Reducer;
+
+public class BigramCountReducer extends Reducer<TextPair,IntWritable,TextPair,IntWritable>{
+
+	@Override
+	public void reduce(TextPair key,Iterable<IntWritable> value ,Context context) {
+		
+		
+		
+		
+	}
+	
+	
+}

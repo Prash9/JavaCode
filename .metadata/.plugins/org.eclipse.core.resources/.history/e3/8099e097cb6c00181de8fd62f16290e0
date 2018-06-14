@@ -1,0 +1,7 @@
+package task.bigramcount;
+
+import org.apache.hadoop.mapreduce.Mapper;
+
+public class BigramCountMapper extends Mapper {
+
+}

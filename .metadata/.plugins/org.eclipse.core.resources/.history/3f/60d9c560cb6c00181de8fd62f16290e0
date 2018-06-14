@@ -1,0 +1,6 @@
+package task.bigramcount;
+
+
+public class BigramCountMapper extends Mapper {
+
+}

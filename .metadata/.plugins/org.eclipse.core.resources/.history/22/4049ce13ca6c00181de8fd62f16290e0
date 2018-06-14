@@ -1,0 +1,39 @@
+package task.bigramcount;
+
+import org.apache.hadoop.mapreduce.*;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.conf.Configured;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.util.Tool;
+import org.apache.hadoop.util.ToolRunner;
+
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Text;
+
+public class BigramCountDriver extends Configured implements Tool {
+
+	public int run() {
+		
+		Job job = Job.getInstance(getConf());
+		job.setJobName("BigramCount");
+		job.setJarByClass(BigramCountDriver.class);
+		
+		job.setMapperClass(cls);
+		job.setReducerClass(cls);
+		
+		job.setMapOutputKeyClass(TextPair.class);
+		
+		job.setOutputKeyClass(Text.class);
+		job.setOutputValueClass(IntWritable.class);
+		
+		return job.waitForCompletion(true)?0:1;
+	}
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		
+	}
+
+}
