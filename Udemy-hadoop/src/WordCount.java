@@ -16,6 +16,7 @@ public class WordCount extends Configured implements Tool {
 
 	public int run(String args[]) throws Exception {
 		if(args.length!=2) {
+			System.out.println(args[0]+""+args[1]+" "+args[2]+" "+args.length);
 			System.out.println("enter 2 paths");
 			System.exit(0);
 		}
@@ -43,7 +44,7 @@ public class WordCount extends Configured implements Tool {
 		job2.setJobName("wordcount2");
 		job2.setJarByClass(WordCount.class);
 	
-		FileInputFormat.addInputPath(job2, new Path(args[1]+"/wc1/part*"));
+		FileInputFormat.addInputPath(job2, new Path(args[1]+"/part*"));
 		FileOutputFormat.setOutputPath(job2, new Path(args[1]+"/wc_final"));
 		
 		job2.setMapperClass(WordCountMapper2.class);
@@ -51,7 +52,7 @@ public class WordCount extends Configured implements Tool {
 		
 		job2.setInputFormatClass(KeyValueTextInputFormat.class);
 		job2.setPartitionerClass(WordCountPartitioner.class);
-		
+		job2.setNumReduceTasks(2);
 		job2.setOutputKeyClass(IntWritable.class);
 		job2.setOutputValueClass(Text.class);
 		

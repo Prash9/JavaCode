@@ -13,7 +13,6 @@
 <fullyQualifiedTypeName name="com.sun.org.apache.xerces.internal.impl.xs.identity.Selector.Matcher"/>
 <fullyQualifiedTypeName name="org.apache.hadoop.mapreduce.lib.input.FileSplit"/>
 <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
-<fullyQualifiedTypeName name="org.apache.hadoop.mapreduce.Reducer"/>
 <fullyQualifiedTypeName name="org.apache.hadoop.util.Tool"/>
 <fullyQualifiedTypeName name="org.apache.hadoop.io.WritableComparable"/>
 <fullyQualifiedTypeName name="java.io.DataInput"/>
@@ -25,6 +24,10 @@
 <fullyQualifiedTypeName name="org.apache.hadoop.io.Text"/>
 <fullyQualifiedTypeName name="org.apache.hadoop.mapreduce.lib.input.MultipleInputs"/>
 <fullyQualifiedTypeName name="org.apache.hadoop.mapreduce.Partitioner"/>
-<fullyQualifiedTypeName name="org.apache.hadoop.io.IntWritable"/>
 <fullyQualifiedTypeName name="org.apache.hadoop.mapreduce.Mapper"/>
+<fullyQualifiedTypeName name="org.apache.hadoop.mapred.jobcontrol.JobControl"/>
+<fullyQualifiedTypeName name="org.apache.hadoop.mapred.KeyValueTextInputFormat"/>
+<fullyQualifiedTypeName name="org.apache.hadoop.mapreduce.lib.input.KeyValueTextInputFormat"/>
+<fullyQualifiedTypeName name="org.apache.hadoop.io.IntWritable"/>
+<fullyQualifiedTypeName name="org.apache.hadoop.mapreduce.Reducer"/>
 </qualifiedTypeNameHistroy>
