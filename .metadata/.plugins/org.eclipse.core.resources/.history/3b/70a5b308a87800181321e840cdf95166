@@ -1,0 +1,23 @@
+package task.friend_recommeder;
+
+import org.apache.hadoop.io.IntWritable;
+import task.bigramcount.TextPair;
+import org.apache.hadoop.mapreduce.Reducer;
+
+
+public class Reducer1 extends Reducer<TextPair,IntWritable,TextPair,IntWritable> {
+
+	public void reduce(TextPair key,Iterable<IntWritable> values, Context context) {
+		
+		int sum = 0;
+		int prod = 0;
+		for(IntWritable i : values) {
+			sum += i.get() 
+		}
+		
+		if(prod != 0) {
+			context.write(key, sum);
+		}
+	}
+	
+}

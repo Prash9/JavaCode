@@ -1,0 +1,26 @@
+package task.friend_recommeder;
+
+import java.io.IOException;
+
+import org.apache.hadoop.conf.Configured;
+import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+
+public class RecommenderDriver extends Configured implments Tool{
+
+	public int run(String[] args) {
+		
+		Job job1 = Job.getInstance(getConf());
+		FileInputFormat.setInputPaths(job1, new Path[0]);
+		
+		return 0;
+		
+	}
+	
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		
+		
+	}
+
+}

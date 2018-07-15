@@ -1,0 +1,15 @@
+package task.friend_recommeder;
+
+import org.apache.hadoop.io.IntWritable;
+import task.bigramcount.TextPair;
+import org.apache.hadoop.mapreduce.Reducer;
+
+
+public class Reducer1 extends Reducer<TextPair,IntWritable,TextPair,IntWritable> {
+
+	public void reduce(TextPair key,Iterable<IntWritable> values, Context context) {
+		
+		
+	}
+	
+}

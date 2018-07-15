@@ -1,5 +1,0 @@
-package task.bigramcount;
-
-public class BigramCountReducer Reduce<TextPair,Iterable<IntWritable>,TextPair,IntWritable>{
-
-}

@@ -1,0 +1,7 @@
+package task.friend_recommeder;
+
+public class Reducer1 extends Reducer<TextPair,IntWritable,TextPair,IntWritable> {
+
+	public void reduce
+	
+}

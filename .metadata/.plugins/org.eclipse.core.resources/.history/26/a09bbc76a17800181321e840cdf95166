@@ -1,0 +1,16 @@
+package task.friend_recommeder;
+
+import java.io.IOException;
+
+import org.apache.hadoop.mapreduce.Job;
+
+public class RecommenderDriver {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		Job job1 = Job.getInstance();
+		
+		
+	}
+
+}

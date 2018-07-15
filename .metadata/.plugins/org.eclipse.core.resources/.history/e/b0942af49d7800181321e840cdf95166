@@ -1,0 +1,38 @@
+package task.friend_recommeder;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
+
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Mapper;
+
+
+import task.bigramcount.TextPair;
+
+class Map1 extends Mapper<LongWritable,Text,TextPair,IntWritable>{
+	
+	private TextPair tp;
+	private IntWritable count;
+	public void map(LongWritable key,Text value,Context context) throws IOException,InterruptedException 
+	{
+		
+		String line = value.toString();
+		int index = line.indexOf("\t");
+		if (index == -1) {
+			return;
+		}
+		String user_id = line.substring(0,index);
+//		List<String> friend_list = new ArrayList<String>();
+		StringTokenizer st = new StringTokenizer(line.substring(index+1),",");
+		
+		
+		
+	}
+	
+	
+	
+}

@@ -1,0 +1,62 @@
+package task.friend_recommeder;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
+
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Mapper;
+
+
+import task.bigramcount.TextPair;
+
+class Map1 extends Mapper<LongWritable,Text,TextPair,IntWritable>{
+	
+	private TextPair tp = new TextPair();
+	private IntWritable count = new IntWritable();
+	private Text second = new Text();
+	private Text first = new Text();
+	public void map(LongWritable key,Text value,Context context) throws IOException,InterruptedException 
+	{
+		
+		String line = value.toString();
+		int index = line.indexOf("\t");
+		if (index == -1) {
+			return;
+		}
+		String user_id = line.substring(0,index);
+		String[] friends_list_id = line.substring(index+1).split(",");
+		
+		first.set(user_id);
+		count.set(0);
+//		user_id and friends_list_id 
+		for(int i = 0 ; i<friends_list_id.length ; i++) {
+			second.set(friends_list_id[i]);
+			tp.set(first, second);
+			context.write(tp, count);
+		}
+		
+		count.set(1);
+//		each pair of friend has 1 mutual friend
+//		count of mutual friends for user1 and user2 (<user1,user2>,1) , (<user2,user1>,1) 
+		for(int i = 0;i<friends_list_id.length ; i++) {
+			first.set(friends_list_id[i]);
+			for(int j =0 ; j<friends_list_id.length ; j++) {
+				if(i == j) {
+					continue;
+				}
+				second.set(friends_list_id[j]);
+				tp.set(first, second);
+				context.write(tp , count);
+			}
+		}
+		
+		
+	}
+	
+	
+	
+}
